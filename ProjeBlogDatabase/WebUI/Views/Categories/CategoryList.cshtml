@@ -1,0 +1,101 @@
+﻿@using Entities
+@model List<Category>
+@{
+    ViewBag.Title = "CategoryList";
+}
+
+<h2>CategoryList</h2>
+<a href="~/Categories/Create" class="btn btn-success">Yeni Ekle</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Category name</th>
+            <th scope="col">Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Category item in Model)
+        {
+            <tr>
+
+                <th scope="row">1</th>
+                <td name="tst">@item.ID</td>
+                <td name="Category_Name">@item.Category_Name</td>
+                <td name="Active">@item.Active</td>
+                <td><div id="btn-delete" data-id="@item.ID" class="btn btn-danger">Sil</div></td>
+                <td><div id="btn-update" data-target="#ModalSmall" data-toggle="modal" class="btn btn-info">Güncelle</div></td>
+
+
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+@Bootstrap.ModalPopup(id:"ModalSmall")
+
+@section js{
+    <script type="text/javascript">
+        $("#btn-update").click(function () {
+            
+            var currow = $(this).closest('tr');
+            var col1 = currow.find('td:eq(0)').text();
+            var col2 = currow.find('td:eq(1)').text();
+             var col3 = currow.find('td:eq(2)').text();
+               $("#ModalSmall").on('show.bs.modal', function (e) {
+                 $(".modal-body").load("/Categories/LoadData/" + col1)
+
+        })
+        })
+
+        function tikla(idf) {
+            alert(idf);
+            data2 = $("#mid1").val();
+            alert(data2);
+            var tf = document.getElementById("mid2").checked;
+            
+            alert(tf);
+            
+            $.get("/Categories/FEdit/", { id: idf, deger1: data2, deger2: tf }, function (d) {
+                alert(d);
+                location.reload();
+
+            }).fail(function () {
+                alert("hata");
+            });
+            
+        };
+     
+        
+
+
+        $("table tbody #btn-delete").click(function () {
+            deger = $(this).attr("data-id");
+            //alert(deger);
+            $.ajax({
+                method: "GET",
+                url: "/Categories/Delete/" + deger,
+                beforeSend: function () { alert("deleting") }
+            }).done(function (d) {
+                alert("deleted");
+                location.reload();
+            }).fail(function () {
+
+            }).always(function () {
+
+            })
+        });
+
+       
+
+
+
+
+
+
+
+
+    </script>
+}

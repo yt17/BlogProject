@@ -1,0 +1,23 @@
+﻿@model Entities.Category
+<div class="row">
+    <div class="col-md-12">
+        <p>
+
+            <label>Name</label>
+
+            <input id="mid1" type="text" value="@Model.Category_Name" />
+            <label>Active</label>
+            @if (Model.Active == true)
+            {
+                <input id="mid2" type="checkbox" value="@Model.Active" checked /><br />
+            }
+            else
+            {
+                <input id="mid2" type="checkbox" value="@Model.Active" /><br />
+            }
+            <div id="btnm" onclick="tikla(@Model.ID)" class="btn btn-success">Tikla</div>          
+            
+        </p>
+    </div>
+</div>
+

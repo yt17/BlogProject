@@ -1,0 +1,27 @@
+﻿@model WebUI.Models.Register
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label>UserName</label>
+        @Html.TextBoxFor(i => i.Username, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>mail</label>
+        @Html.TextBoxFor(i => i.Email, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>psw</label>
+        @Html.TextBoxFor(i => i.Password, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">tikla</button>
+}

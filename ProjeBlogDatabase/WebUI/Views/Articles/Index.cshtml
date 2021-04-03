@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Entities.Article>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model=>model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Article_Name)
+        </th>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Category_ID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Article_Name)
+    </td>
+    <td>
+        @if (item.Active == "T")
+        {
+            <input id="tf" type="checkbox" checked />
+        }
+        else
+        {
+            <input id="tf" type="checkbox" />
+        }
+        
+
+    </td>
+    <td>      
+        
+        <div id="btn2" class="btn btn-danger">Sil</div>
+        <div id="btn1" class="btn btn-success" data-target="#modal3" data-toggle="modal">Oku</div>
+    </td>
+</tr>
+    }
+
+</table>
+@Bootstrap.ModalPopupLarge()
+
+@section js{
+    <script type="text/javascript">
+        $("table tbody #btn1").click(function () {
+            var currow = $(this).closest('tr');
+            var val = currow.find('td:eq(0)').text();
+            //alert(val);
+
+            
+            //$(".modal-body").get("/Articles/Loaddata/" + val)
+            $("#modal3").on('show.bs.modal', function (e) {
+                $.get("/Articles/Loaddata/", { id: val }, function (d) {
+                    $(".mdx").html(d);
+                })
+
+            })
+        })
+
+        $("$tf").click(function () {
+
+        });
+
+        //$("#btnsave").click(function () {
+        //    var vtitle = $(".modal-title").text();
+        //    var vltitle = $("#idltitle").text;
+        //    var vtext = $("idtext").text();
+        //    alert(vtitle);
+        //});
+    </script>
+    }

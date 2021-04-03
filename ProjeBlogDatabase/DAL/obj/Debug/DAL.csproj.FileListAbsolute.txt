@@ -1,0 +1,15 @@
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\bin\Debug\DAL.dll.config
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\bin\Debug\DAL.dll
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\bin\Debug\DAL.pdb
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\bin\Debug\Core.dll
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\bin\Debug\Entities.dll
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\bin\Debug\EntityFramework.dll
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\bin\Debug\Core.pdb
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\bin\Debug\Entities.pdb
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\bin\Debug\EntityFramework.xml
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\obj\Debug\DAL.dll
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\DAL\obj\Debug\DAL.pdb

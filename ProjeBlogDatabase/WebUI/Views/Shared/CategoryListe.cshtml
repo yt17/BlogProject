@@ -1,0 +1,28 @@
+﻿@* buraya kategori parcasi kodlanacak *@
+
+@using Entities;
+@using BusinessLayer;
+
+@{
+    CategoryManager cm = new CategoryManager();
+    
+    List<Category> lst = cm.List();
+    
+    
+
+
+}
+
+
+    <div class="col-md-3">
+        <h3>Kategoriler</h3>
+        <ul class="list-icon list-icon-arrow list-icon-colored">
+            @foreach (Category item in lst)
+            {
+                <li><a id="snd" href="#">@item.Category_Name</a></li>
+            }
+        </ul>
+    </div>
+
+
+ 

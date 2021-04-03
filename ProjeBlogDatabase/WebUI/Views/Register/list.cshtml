@@ -1,0 +1,11 @@
+﻿@using Proje_Identity
+@model IEnumerable<ApplicationUser>
+@{
+    ViewBag.Title = "list";
+}
+
+<h2>list</h2>
+@foreach (ApplicationUser item in Model)
+{
+    <p>@item.UserName</p><p>|</p><p>@item.Email</p><br />
+}

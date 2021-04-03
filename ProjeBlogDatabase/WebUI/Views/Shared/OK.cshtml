@@ -1,0 +1,41 @@
+﻿@using WebUI.ViewModels
+@model OkViewModel
+@{
+    ViewBag.Title = Model.Title;
+}
+<div class="jumbotron">
+    <h1>@Model.Header</h1>
+    <p>@Model.Title</p>
+</div>
+
+
+@if (Model.Items == null)
+{
+
+}
+else
+{
+    <ul class="list">
+        @foreach (string item in Model.Items)
+        {
+            <li class="list-item">@item</li>
+        }
+    </ul>
+}
+
+
+
+@{
+    string js = string.Empty;
+    if (Model.Irouting)
+    {
+        js = "setTimeout(function(){window.location='" + Model.RootUrl + "';}," + Model.RedirectTimeOut + ");";
+    }
+}
+<script>
+    $(function () {
+        setTimeout(function () { window.location = "/Home/Index"; }, 10000);
+    });
+    
+
+</script>

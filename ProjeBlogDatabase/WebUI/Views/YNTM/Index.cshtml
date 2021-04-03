@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Entities.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.U_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.U_Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mail_Adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @item.ID
+    </td>
+    <td contenteditable="true">
+        @item.User_Name
+    </td>
+    <td contenteditable="true">
+        @item.U_Name
+    </td>
+    <td contenteditable="true">
+        @item.U_Surname
+    </td>
+    <td contenteditable="true">
+        @item.Mail_Adress
+    </td>
+    <td>
+        @if (item.Active == true)
+        {
+            <input id="tf" type="checkbox" checked /><br />
+        }
+        else
+        {
+            <input id="tf" type="checkbox" /><br />
+        }
+
+
+    </td>
+    <td>
+        <div class="btn btn-success" id="kydt">Kaydet</div>&nbsp|
+        @Html.ActionLink("Yenileme Linki Gonder", "Edit", new { id = item.ID })
+    </td>
+</tr>
+}
+
+</table>
+
+@section js{
+    <script>
+        $("table tbody #kydt").click(function () {
+            var currow = $(this).closest('tr');
+            var col0 = currow.find('td:eq(0)').text();
+            var col1 = currow.find('td:eq(1)').text();
+            var col2 = currow.find('td:eq(2)').text();
+            var col3 = currow.find('td:eq(3)').text();
+            var col4 = currow.find('td:eq(4)').text();
+            var col5 = document.getElementById("tf").checked;
+            
+
+            $.get("/YNTM/Edit/", {id:col0, User_Name: col1, U_Name: col2, U_Surname: col3, Mail_Adress: col4, Active: col5 }, function (d) {
+              alert("tamamlandi")  
+            })
+            
+        })
+    </script>
+    }

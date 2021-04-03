@@ -1,0 +1,32 @@
+﻿@helper ModalPopup(string id = "0", string baslik = "undefined", string active = "undefined")
+{
+    <div class="modal fade kl" id="@id" tabindex="-1" role="modal" aria-labelledby="modal-label-2"
+         aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="modal-label-2" class="modal-title">Small Modal</h4>
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <div class="float-left">
+                        <button data-dismiss="modal" class="btn btn-b" type="button">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@helper ModalPopupLarge()
+{
+<div class="modal fade" id="modal3" tabindex="-1" role="modal" aria-labelledby="modal-label-3" style="padding-right: 17px;" aria-hidden="true">
+    <div class="modal-dialog modal-lg mdx">
+        
+    </div>
+</div>
+}

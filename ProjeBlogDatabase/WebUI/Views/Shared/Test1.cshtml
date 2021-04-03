@@ -1,0 +1,7 @@
+﻿@model List<string>
+
+@foreach (string item in Model)
+{
+    <li id="id_@Model.IndexOf(item)" class="list-group-item">@item</li>
+
+}

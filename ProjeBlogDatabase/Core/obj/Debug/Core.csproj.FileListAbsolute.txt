@@ -1,0 +1,5 @@
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\Core\bin\Debug\Core.dll
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\Core\bin\Debug\Core.pdb
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\Core\obj\Debug\Core.dll
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\Core\obj\Debug\Core.pdb
+C:\Users\yusuf\source\repos\ProjeBlogDatabase\Core\obj\Debug\Core.csprojAssemblyReference.cache

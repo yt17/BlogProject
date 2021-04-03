@@ -1,0 +1,50 @@
+﻿@model Entities.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.User_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.U_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.U_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.U_Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.U_Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mail_Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mail_Adress)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

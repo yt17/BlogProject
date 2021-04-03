@@ -1,0 +1,50 @@
+﻿@model Entities.Article
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 id="modal-label-3" class="modal-title" contenteditable="true" >@Model.Article_Name</h4>
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+        </div>
+        <div class="modal-body">
+            <div class="row mb20">
+                <div class="col-md-12">
+                    <div class="label" style="color:black">@Model.Category_ID</div><br />
+                    
+                    @if (@Model.Active == "T")
+                    {
+                        <input type="checkbox"  checked data-toggle="toggle">
+                    }
+                    else
+                    {
+                        <input type="checkbox" data-toggle="toggle">
+                    }
+
+                    <br />
+                    <div class="label" style="color:black">@Model.Create_Date</div>
+
+                </div>
+                </div>
+            <div class="seperator"></div>
+            <div class="row mb20">
+                <div class="col-md-12">
+                    <p contenteditable="true" id="idltitle">
+                        @Model.Article_Litle
+                    </p>
+                </div>
+            </div>
+            <div class="seperator"></div>
+            <div class="row mb20">
+                <div class="col-md-12">
+                    <p contenteditable="true" id="idtext">
+                        @Model.Article_Text
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-b" type="button">Close</button>
+            
+        </div>
+    </div>
+
+
